@@ -1,0 +1,44 @@
+<project 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  http://maven.apache.org/maven-v4_0_0.xsd" 
+  xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <modelVersion>4.0.0</modelVersion>
+   <name>Functional Testing Script for Project X</name>
+   <description>Quality Assurance script for Categories X, Y, Z</description>
+   <groupId>com.melia.testing.regresion</groupId>
+   <artifactId>soapui-maven2-projectX-regression-test</artifactId>
+   <packaging>jar</packaging>
+   <version>1.0-SNAPSHOT</version>
+   <pluginRepositories>
+      <pluginRepository>
+         <id>smartbear-sweden-plugin-repository</id>
+         <url>http://www.soapui.org/repository/maven2/</url>
+      </pluginRepository>
+   </pluginRepositories>
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>com.smartbear.soapui</groupId>
+            <artifactId>soapui-maven-plugin</artifactId>
+            <version>5.1.2</version>
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>test</goal>
+                  </goals>
+                  <phase>test</phase>
+               </execution>
+            </executions>
+            <configuration>
+               <projectFile>./REST-Project-JAX-RS-soapui-project.xml</projectFile>
+               <endpoint>http://192.168.99.100:8081</endpoint>
+               <outputFolder>${project.build.directory}/surefire-reports</outputFolder>
+               <junitReport>true</junitReport>
+               <printReport>true</printReport>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+</project>

@@ -1,0 +1,1 @@
+# helloSoa-acceptance-tests
